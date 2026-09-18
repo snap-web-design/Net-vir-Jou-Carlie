@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================
+   COLOURS
+========================= */
+
+:root {
+    --cream: #f4eee4;
+    --beige: #e7d8c3;
+    --light-brown: #b79b7d;
+    --brown: #765a43;
+    --dark-brown: #3b2a20;
+    --soft-brown: #92765d;
+    --white: #fffaf3;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--dark-brown);
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    min-height: 100vh;
+}
+
+.welcome-container {
+    position: relative;
+    z-index: 5;
+
+    width: min(90%, 650px);
+
+    text-align: center;
+
+    padding: 50px 25px;
+}
+
+.shoe {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: floatingShoe 3s ease-in-out infinite;
+}
+
+.tiny-text {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: var(--soft-brown);
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 8vw, 75px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+}
+
+h1 span {
+    color: var(--brown);
+}
+
+.subtext {
+    max-width: 480px;
+
+    margin: 30px auto;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: var(--soft-brown);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.next-button {
+    margin-top: 20px;
+
+    border: none;
+
+    background: var(--dark-brown);
+
+    color: var(--white);
+
+    padding: 17px 38px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.next-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--brown);
+
+    box-shadow: 0 12px 25px rgba(59, 42, 32, 0.18);
+}
+
+.next-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   BACKGROUND CIRCLES
+========================= */
+
+.background-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 350px;
+    height: 350px;
+
+    background: var(--beige);
+
+    top: -130px;
+    right: -100px;
+
+    opacity: 0.7;
+}
+
+.circle-two {
+    width: 250px;
+    height: 250px;
+
+    background: var(--light-brown);
+
+    bottom: -100px;
+    left: -100px;
+
+    opacity: 0.25;
+}
+
+
+/* =========================
+   MESSAGE PAGE
+========================= */
+
+.message-page {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 70px 20px;
+}
+
+.message-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(100%, 700px);
+
+    text-align: center;
+}
+
+
+/* =========================
+   10 KM CIRCLE
+========================= */
+
+.distance {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 25px;
+
+    border: 2px solid var(--brown);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform: rotate(-8deg);
+
+    background: var(--white);
+}
+
+.distance span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    line-height: 0.9;
+}
+
+.distance small {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.hello {
+    color: var(--soft-brown);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.message-container h1 {
+    font-size: clamp(38px, 7vw, 62px);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   MESSAGE CARD
+========================= */
+
+.message-card {
+    background: var(--white);
+
+    padding: 35px 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(59, 42, 32, 0.08);
+
+    border: 1px solid rgba(118, 90, 67, 0.12);
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+.message-card p {
+    margin-bottom: 18px;
+}
+
+.message-card p:last-child {
+    margin-bottom: 0;
+}
+
+.message-card .funny {
+    color: var(--brown);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   LITTLE RUNNING LINE
+========================= */
+
+.bottom-message {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: var(--soft-brown);
+}
+
+.little-line {
+    width: 25px;
+
+    height: 1px;
+
+    background: var(--light-brown);
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-text {
+    max-width: 520px;
+
+    margin: 35px auto 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--soft-brown);
+}
+
+.shoe-row {
+    font-size: 35px;
+
+    margin-top: 25px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   RUNNING SHOES
+========================= */
+
+.running-track {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 30px;
+
+    height: 2px;
+
+    background: var(--beige);
+}
+
+.runner {
+    position: absolute;
+
+    font-size: 30px;
+
+    bottom: 38px;
+
+    z-index: 3;
+
+    animation: runAcross 9s linear infinite;
+}
+
+.runner-two {
+    animation-delay: 4.5s;
+
+    font-size: 23px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floatingShoe {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+
+@keyframes runAcross {
+
+    0% {
+        left: -60px;
+        transform: rotate(0deg);
+    }
+
+    45% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        left: calc(100% + 60px);
+        transform: rotate(0deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome-container {
+        padding: 30px 20px;
+    }
+
+    .shoe {
+        font-size: 55px;
+    }
+
+    .subtext {
+        font-size: 15px;
+
+        padding: 0 10px;
+    }
+
+    .message-page {
+        padding: 50px 18px;
+    }
+
+    .message-card {
+        padding: 28px 22px;
+
+        font-size: 17px;
+    }
+
+    .bottom-message {
+        gap: 7px;
+
+        font-size: 10px;
+    }
+
+    .little-line {
+        width: 15px;
+    }
+
+}
